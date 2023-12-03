@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWEB</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="bg-wraper">
+        <!-- background overlay -->
+        <div class="bg-galaxy"></div>
+
+        <!-- header section -->
+        <header>
+            <div class="logo"><a href="#"><img src="./images/_cb790614-76fb-49ea-a953-6ca22c621e52-removebg-preview.png" class="rotate linear infinite"></a></div>
+            <nav>
+                <a href="#">HOME</a>
+                <a href="#">ABOUT</a>
+                <a href="#">CONTACT</a>
+            </nav>
+
+        </header>
+
+        <!-- section 1 -->
+
+        <section class="section-hero">
+            <div class="container">
+                <div class="text-section">
+                    <h1 id="h1-hero">Design tools from the future.</h1>
+                    <p class="quote">Unleash your creativity with Diagram's
+                        AI-powered design tools.</p>
+                    <a href="#" class="btn-future">Explore the future</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="height: 100vh;" class="s2">
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+
+
+    <script>
+
+
+
+        const myText = new SplitType('#h1-hero')
+
+
+        gsap.to('.char', {
+
+            y: 0,
+            stagger: 0.05,
+            delay: 0.2,
+            duration: .1
+        })
+
+
+
+        const tl = gsap.timeline({ }),
+        split = new SplitText(".quote", { type: "chars, words" }),
+        chars = split.chars;
+
+        tl.set(chars, { color: "random([#bdbdc0, white])" }, 2);
+
+        tl.from(chars, {
+            opacity: 0,
+            duration: .1,
+            stagger: .02,
+
+        });
+
+        tl.to(chars, {
+            duration: .5,
+            opacity: 1,
+            stagger: 0.05,
+            ease: "power4.inOut",
+        });
+
+        
+
+        
+
+        
+
+
+        // const titles = gsap.utils.toArray('p');
+        // const tl = gsap.timeline();
+
+
+        // titles.forEach(title => {
+
+        //     const spllitTitle = new SplitTextJS(title);
+
+        //     tl
+        //         .from(spllitTitle.chars, {
+        //             opacity:0,
+        //             y:80,
+        //             rotateX:-90,
+        //             stagger:0.2
+
+        //         }, "<")
+
+        //         .to(spllitTitle.chars, {
+        //             opacity:0,
+        //             y:-80,
+        //             rotateX:90,
+        //             stagger:0.2
+        //         }, "<1")
+        // })
+
+
+
+
+
+
+        // gsap.set('nav', {
+        //     webkitbackdropFilter: "blur(0px)",
+        //     backdropFilter: "blur(0px)",
+
+        // })
+
+
+        // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         start: 'top+=50',
+        //         end: '+=1',
+        //         toggleAction: 'play none none reverse',
+        //         scrub: 2
+        //     }
+        // })
+
+
+
+        // tl.to('nav', {
+        //     opacity: 1,
+        //     position: "fixed",
+        //     webkitbackdropFilter: "blur(32px)",
+        //     backdropFilter: "blur(32px)",
+        //     background: "rgba(255,255,255,.08)",
+        //     borderRadius: 32,
+        //     zIndex:4,
+        //     ease: "bounce"
+        // })
+
+
+
+
+
+        //smooth scroll
+        const lenis = new Lenis()
+
+
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
